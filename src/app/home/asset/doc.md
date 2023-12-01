@@ -13,7 +13,7 @@ Qu'est-ce qui caractérise un code "bien écrit" ?
 
 La langue anglaise demeure préconisée pour tous les nommages
 
-**L’indentation du code**
+**L’indentation du code** :
 utiliser des tabulations
 
 **Convention de nommage** :
@@ -24,17 +24,19 @@ utiliser des tabulations
     * Nom de la variable en camelCase
     * Identifier noms trop courts, trop longs.
     * Utiliser ses règles de nommage :
-        > let casesList = []; // pour un tableau
-        let isOpen = true; // pour un boolean
-        let hasDroit = false; // pour un boolean
+        >  *** {list} pour un tableau //let casesList = [];
+        {is} *** pour un boolean //let isOpen = true;
+        {has}*** pour un boolean //let hasDroit = false; 
     * Identifier valeurs littérales (remplacer en constante)
 * *Constantes* :
     * Accessibilité : public/private/protected
     * Type : const
     * Nom de la variable en UPPERCASE
     * Même regles de nommage que les variables "classiques"
-* *Interface* :
-* *Classes* :
+* *Interfaces / CLasses* :
+    * Type : interface / class
+    * Nom de la variable en PascalCase
+    * Même regles de nommage que les variables "classiques" 
 * **Fonctions** :
     * Accessibilité : public/private/protected
     * Type : function
@@ -42,7 +44,7 @@ utiliser des tabulations
     * Paramètres avec leur typage : (type $param1, type $param2, etc.)
     * Type de retour de la fonction
     * Au mieux, une fonction ne doit pas dépasser, en hauteur, la taille de l’écran.
-    * Elles doivent ête commentée (params et return)
+    * Elles doivent ête commentée (explications, params et return)
         >/**
             * Send custom request using fetch api
             * @param { String } url
@@ -53,8 +55,18 @@ utiliser des tabulations
             function ajax(url, method, body) {
                 …
             }
+
+        côté Nest
+        >/**
+            * Check if the user can do something about on Entity
+            * @example checkIfUsercanDoOnEntity('1072166')
+            * @param {entity} String, the entity the user wants do something about
+            * @throws {UnauthorizedException} if the user can not 
+            * @throws {InternalServerErrorException} if an error occurs
+            */
+
 * **les fichiers** :
-    * Nom du fichier en Kebab Case (just-a-steack.componant.ts)
+    * Nom du fichier en KebabCase (just-a-steack.componant.ts)
     * ils doivent etre créer via la console :
         pour un component => ng g c *nomducomponent*
         pour un service => ng g s *nomduservice*
@@ -62,7 +74,8 @@ utiliser des tabulations
     * Ils doivent avoir des noms court et parlant.
     * *Suggestions de nommage* :
         * pour les dialogs => confirm-dialog
-        * pour les sideba => sb-contact 
+        * pour les sideba => sb-contact
+
 **preference d'écriture** :
 * *Chaînes de caractères* :
     préférez :
@@ -71,8 +84,8 @@ utiliser des tabulations
 
     à :
     >console.log('Hi! I\'m' + myName + '!');
-* *fin d'excecution* :
-    Terminer les instructions par un ;
+* *fin d'excécution* :
+    Terminer les instructions par ;
     > console.log(maVariable);
 * *boucles* : 
     >let cats = ["Athena", "Luna"];
@@ -99,23 +112,20 @@ utiliser des tabulations
     * Utilisez des guillemets doubles pour les chaînes.
 * *Suggestions de nommage* :
     * Ajouter à une liste : *add ou append*
-    * Suppression complète de données : *delete* (car les méthodes REST utilisent DELETE)
+    * Suppression complète de données : *delete*
     * Retirer un élément d'une liste : *remove*
     * Annulation d'action : *cancel*
     * Ouverture/fermeture : *open/close* (ou si alternatif : *toggle*)
-    * Récupération de données : *get* (existe en tant que méthode HTTP)
-    * Remplacement de données : *set* (écrase tout)
+    * Récupération de données : *get* 
+    * Remplacement de données : *set*
     * Mise à jour de données : *update* 
     * Réinitialisation à l'état initial : *reset*
     * Callback/gestionnaire : *handle* (ex : handleClick)
     * Dénombrement : *count* (ex: pageCount)
     * Précédent/suivant : *prev*/*next*
 
->ECMAScript 2022
 
 
-
-
-
-1. Valider le code avec typescript-eslint.
-2. SonarQube OK /(prettier)
+**Pour finir** :
+Valider le code avec typescript-eslint.
+SonarQube OK /(prettier)
